@@ -1,2 +1,5 @@
 
-#RPI Case Fan Control on ubuntu using Python
+# RPI Case Fan Control
+
+Fan control service on ubuntu using python
+
