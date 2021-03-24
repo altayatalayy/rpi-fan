@@ -1,0 +1,12 @@
+[Unit]
+Description = Fan control for rpi, pin num:14
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/fan/fan.sh
+ExecStop=/home/ubuntu/fan/fan_c.sh QUIT
+#ExecRestart=/home/ubuntu/fan/fan_c.sh START
+
+[Install]
+WantedBy=multi-user.target
+
