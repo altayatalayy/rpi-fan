@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/ubuntu/fan/scripts/fan.sh
-ExecStop=/home/ubuntu/fan/scripts/fan_c.sh QUIT
+ExecStart=fan --create-server 
+ExecStop=fan --cmd QUIT
 
 [Install]
 WantedBy=multi-user.target

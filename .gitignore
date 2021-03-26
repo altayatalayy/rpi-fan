@@ -1,3 +1,9 @@
 logs/
-venv/
-*.json
+fan/venv/
+fan/*.json
+fan/scripts/
+*.deb
+fan_*/
+!fan_*/DEBIAN/
+*.bak
+
