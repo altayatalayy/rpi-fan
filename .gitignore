@@ -4,5 +4,7 @@ fan/*.json
 fan/scripts/
 *.deb
 fan_*/
+!*.deb
 *.bak
+*.swp
 

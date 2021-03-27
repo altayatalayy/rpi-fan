@@ -2,16 +2,22 @@
 cd /home/ubuntu/fan/
 
 builddir=fan_0.1.0
-if [[ ! -d "$builddir" ]]; then
-	mkdir -p $builddir/DEBIAN
-	echo "created $builddir"
-	echo "#!/bin/bash" > $builddir/DEBIAN/postinst
-	echo "sudo systemctl daemon-reload" >> $builddir/DEBIAN/postinst
-	sudo chmod 0775 $builddir/DEBIAN/postinst
-	touch $builddir/DEBIAN/control
-	echo "creted DEBIAN/control please fill in the file"
-	exit 0
+
+if [[ -d "$builddir" ]]; then
+	rm -rf $builddir
 fi
+
+if [[ -f "$builddir.deb" ]]; then
+	sudo rm "$builddir.deb"
+fi
+
+mkdir $builddir/
+echo "created $builddir"
+mkdir $builddir/DEBIAN/
+
+cp scripts/DEBIAN/control $builddir/DEBIAN/
+cp scripts/DEBIAN/postinst $builddir/DEBIAN/
+sudo chmod 0775 $builddir/DEBIAN/postinst
 
 mkdir -p $builddir/usr/bin
 mkdir -p $builddir/etc/fan

@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo systemctl daemon-reload
+sudo service fan start

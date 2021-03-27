@@ -78,7 +78,7 @@ def control_fan():
                 fan.stop()
                 t = time.time()
                 logging.info(f'Stopped Fan cpu temp = {temp:3.1f}')
-            time.sleep(0.8)
+            time.sleep(1.5)
         fan.stop()
     except BaseException as e:
         logging.debug('{e}')
@@ -178,7 +178,7 @@ if cmd == 'STATUS':
 '''
             sys.stdout.write(msg)
             sys.stdout.flush()
-            time.sleep(0.1)
+            time.sleep(0.15)
             sys.stdout.write("\033[F")
             sys.stdout.write("\033[F")
             sys.stdout.write("\033[F")
